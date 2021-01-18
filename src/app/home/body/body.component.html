@@ -1,0 +1,22 @@
+
+<div class="container">
+    <h2>Notre Formation </h2>
+
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Charge Horaire</th>
+          <th>Plus de Détails </th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let form of tabformationTab">
+        <tr>
+          <td>{{form.titre}}</td>
+          <td>{{form.ch_horaire}}</td>
+          <td><button type="button" class="btn btn-primary" id="{{form.formation_id}}">Détail</button></td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
