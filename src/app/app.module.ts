@@ -16,6 +16,14 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { AccueilComponent } from './page/accueil/accueil.component';
 import {HttpClientModule} from '@angular/common/http'; 
 import { ReactiveFormsModule } from "@angular/forms";
+import { DetailComponent } from './page/detail/detail.component';
+import { FormsModule } from '@angular/forms';
+import { ErourComponent } from './page/erour/erour.component';
+import { RegesterComponent } from './page/regester/regester.component';
+import { MustMatchDirective } from './_helpers/must-match.directive';
+import {NgxPaginationModule} from 'ngx-pagination';
+// import { MustMatchDirective } from './_helpers/must-match.directive'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,13 +37,23 @@ import { ReactiveFormsModule } from "@angular/forms";
     EspaceCandidatComponent,
     EspaceFormateurComponent,
     AdminComponent,
-    AccueilComponent
+    AccueilComponent,
+    DetailComponent,
+    ErourComponent,
+    RegesterComponent,
+    // RegisterComponent,
+     MustMatchDirective,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPaginationModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

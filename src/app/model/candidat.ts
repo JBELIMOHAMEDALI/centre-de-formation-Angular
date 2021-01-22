@@ -8,6 +8,7 @@ export class Candidat {
     photo:string;
     cv:string;
     mot_pass:string
+    
 
     constructor(candidat_id:string,nom:string,prenom:string,email:string,cin:string,photo:string,cv:string,mot_pass:string)
     {
@@ -21,5 +22,6 @@ export class Candidat {
         this.mot_pass=mot_pass;
 
     }
+    
 
 }

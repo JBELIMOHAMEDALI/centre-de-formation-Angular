@@ -1,1 +1,68 @@
-<p>login works!</p>
+<app-bar></app-bar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<div id="container">
+    <div class="content">
+                <h2>Bienvenue</h2><br><br>
+            <div>
+                <label for="email" id="lab1"> Email :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    
+                <input 
+                id="email"
+        type="email" 
+        name="email" 
+        ngModel 
+        #email="ngModel" 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+        required>
+        <br/>
+
+        <div *ngIf="email.touched">
+        <span *ngIf="email.errors?.required" class="text-danger">Email Obligatoire!</span>
+        <span *ngIf="email.errors?.pattern" class="text-danger">Invalide Email!!!</span>
+        </div>
+            </div>
+            <br>
+            <br>
+            <div><!--oublié-->
+                <label for="pass" id="lab2"> Mot de Passe : &nbsp;&nbsp;</label> 
+                <input 
+                id="email"
+        type="password" 
+        name="pass" 
+        ngModel 
+        #passw="ngModel" 
+        required>
+        <br>
+        <div *ngIf="passw.touched">
+            <span *ngIf="passw.errors?.required" class="text-danger">Mot de passe Obligatoire!</span>
+        </div>
+            </div>
+            <br>
+            
+        
+            <br>
+            <div class="btn0" *ngIf="regester==false">
+                <input type="button" class="btnlogin" id="btn0" value="Connection " (click)="getCandidat(passw.value,email.value)" [disabled]="email.invalid || passw.invalid">
+        </div>
+        <div class="btn0" *ngIf="regester==true">
+            <input type="button" class="btnlogin" id="btn0" value="Connection " (click)="getFourmateure(passw.value,email.value)" [disabled]="email.invalid || passw.invalid">
+    </div>​
+        <br>
+        <div class="btn01" *ngIf="regester==false">
+            <input type="button" class="btnlogin" id="btn0" value="Create compte " (click)="regester1()">
+    </div>
+    <br>
+    <br>
+    <a href="#">Mot de Passe Oblie</a>
+    </div>
+</div> 
+</body>
+</html>

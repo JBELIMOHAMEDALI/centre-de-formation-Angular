@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./espace-formateur.component.scss']
 })
 export class EspaceFormateurComponent implements OnInit {
-
-  constructor() { }
+  id_formateure:string;
+  constructor() { 
+    this.id_formateure=localStorage.getItem("formateur_id");
+  }
 
   ngOnInit(): void {
   }

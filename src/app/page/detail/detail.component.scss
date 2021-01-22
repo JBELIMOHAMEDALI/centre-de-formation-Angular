@@ -9,7 +9,6 @@
 body
 {
   
-  background:linear-gradient(45deg,#8500ff,#5acaff);
   height: 100vh;
   
 }
@@ -25,8 +24,8 @@ body
   height: 100%;*/
       display: flex;
       justify-content: center;
-      align-items: center;
-      background: url("../../assets/imag/p404.png") ,#151729;
+    //  align-items: center;
+      background: #b8b8bb;
       box-shadow: 0 15px 30px rgba(0,0,0,.5);
 }
 #container .content
@@ -36,9 +35,10 @@ body
 }
 #container .content h2
 {
-  font-size: 18vw;
+  font-size: 5vw;
   color: #fff;
   line-height : 1em;
+  margin-top: 50px;
 }
  h4
 {

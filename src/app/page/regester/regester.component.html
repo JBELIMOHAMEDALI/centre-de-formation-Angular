@@ -1,0 +1,103 @@
+
+
+<div class="modal-header">
+    <h4 class="modal-title">{{tetre}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   <!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div *ngIf="alert==true" class="alert alert-success" role="alert">
+                    {{message}}
+                  </div>
+                  <div *ngIf="alertdanger==true" class="alert alert-danger" role="alert">
+                    {{message}}
+                  </div>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" [mustMatch]="['password', 'confirmPassword']" novalidate>
+                    <div class="form-group">
+                        <label for="firstName">Nom</label>
+                        <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+                        <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                            <div *ngIf="firstName.errors.required">Nom Obligatoire !!</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Prenom</label>
+                        <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
+                        <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                            <div *ngIf="lastName.errors.required">Prenom Obligatoire !!</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">Email Obligatoire !!</div>
+                            <div *ngIf="email.errors.email">Email non valide </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="firstName">CIN</label>
+                        <input type="text" class="form-control" name="cin" [(ngModel)]="model.cin" #cin="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cin.invalid }" required  minlength="8"/>
+                        <div *ngIf="f.submitted && cin.invalid" class="invalid-feedback">
+                            <div *ngIf="cin.errors.required">CIN Obligatoire !!</div>
+                            <div *ngIf="cin.errors.minlength">CIN doit etre compose de 8 numerou</div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="firstName">Photo</label>
+                        <input type="text" class="form-control" name="ph" [(ngModel)]="model.photo" #ph="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ph.invalid }" required />
+                        <div *ngIf="f.submitted && ph.invalid" class="invalid-feedback">
+                            <div *ngIf="ph.errors.required">Photo Obligatoire !!</div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="firstName">CV</label>
+                        <input type="text" class="form-control" name="cv" [(ngModel)]="model.cv" #cv="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cv.invalid }" required />
+                        <div *ngIf="f.submitted && cv.invalid" class="invalid-feedback">
+                            <div *ngIf="cv.errors.required">CV Obligatoire !!</div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
+                        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                            <div *ngIf="password.errors.required">Mot de passe Obligatoire !!</div>
+                            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Mot de passe</label>
+                        <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid }" required />
+                        <div *ngIf="f.submitted && confirmPassword.invalid" class="invalid-feedback">
+                            <div *ngIf="confirmPassword.errors.required"> Confirm Mot de passe Obligatoire</div>
+                            <div *ngIf="confirmPassword.errors.mustMatch">Passwords must match</div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn btn-primary" [disabled]="f.invalid">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+  </div>
